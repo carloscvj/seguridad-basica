@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="distribuir" default="distribuir">
+  
+    <target name="propiedades" >
+        <property name="eljar" value="dkt/target/seguridad-basica-dkt-${project.dkt.version}-Z.jar"/>
+    </target>
+    
+    <target name="desplegar" depends="propiedades">
+        <unzip src="${eljar}" dest="./target/dist" overwrite="true">
+            <patternset>
+                <include name="**/*.int"/>
+                <include name="**/*.idy"/>
+            </patternset>
+        </unzip>
+    </target>
+    
+    <target name="init" depends="desplegar">
+        <property name="distribuir.destino" value="${user.home}/local/${project.dkt.carpeta}-${project.dkt.version}"/>
+        <echo level="info" message="--------------------------------------------------------------------------"></echo>
+        <echo level="info" message="basedir=${basedir}"></echo>
+        <echo level="info" message="project.src.bin=${project.src.bin}"></echo>
+        <echo level="info" message="distribuir.destino=${distribuir.destino}"></echo>
+        <echo level="info" message="--------------------------------------------------------------------------"></echo>
+    </target>
+  
+    <target name="distribuir" depends="init">
+        
+        <copy todir="${distribuir.destino}/base-bin" verbose="true">
+            <fileset dir="${project.cor}/src/main/base-bin"></fileset>
+        </copy>
+
+        <mkdir dir="target/dist"></mkdir>
+        <copy todir="${distribuir.destino}" verbose="true">
+            <fileset dir="target/dist"></fileset>
+        </copy>
+        
+        <copy todir="${distribuir.destino}" verbose="true">
+            <fileset dir="dkt/target" includes="**/*Z.jar"></fileset>
+        </copy>
+       <!-- 
+        <copy todir="${distribuir.destino}" verbose="true">
+            <fileset dir="${project.cor}/ejb/target" includes="**/*.jar" excludes="**/endorsed/**,**/surefire/**"></fileset>
+        </copy>
+        
+        <copy todir="${distribuir.destino}" verbose="true">
+            <fileset dir="${project.cor}/gfs/target" includes="**/*Z.jar"></fileset>
+        </copy>
+       -->
+        <copy todir="${distribuir.destino}" verbose="true">
+            <fileset dir="srv/target" includes="**/*Z.jar"></fileset>
+        </copy>
+        
+        <!--
+        <copy todir="${distribuir.destino}" verbose="true">
+            <fileset dir="${project.cor}/web/target" includes="**/*.war"></fileset>
+        </copy>
+
+        <copy todir="${distribuir.destino}" verbose="true">
+            <fileset dir="${project.cor}/gfc/target" includes="**/*Z.jar"></fileset>
+        </copy>
+        -->
+        <exec executable="chmod">
+            <arg value="-R"/>
+            <arg value="ugo+x"/>
+            <arg value="${distribuir.destino}/base-bin"/>
+        </exec>              
+    </target>
+
+</project>

@@ -1,0 +1,72 @@
+#!/bin/sh
+
+#--------FUNCTIONS--------------------------------------------------
+say() {
+if [ "${args}" ]
+    then
+        nada=""
+    else
+        echo ${*}
+fi
+}
+#-----------------------------------------------------------------
+fun() {
+
+for i in $algo/*
+do
+	if [ -d "$i" ]
+	then
+		COBPATH=$COBPATH:$i
+                COBIDY=$COBIDY:$i
+                algo=$i
+		fun
+	fi
+done
+
+}
+#-----------------------END FUNCTIONS --------------------------------
+
+export args=${*}
+echo "`date` Ejecutando el comando de sh ${0} ${*}" >>/tmp/SeguridadRUN.log
+
+if [ "${args}" ]
+    then
+        nada=""
+    else
+        SeguridadVER.sh
+fi
+
+if [ "${INSTALACION}" ]
+then
+	say "INSTALACION=${INSTALACION}"
+else
+	export INSTALACION=/usr/local;say "INSTALACION=${INSTALACION}"
+fi
+if [ "${CARPETA}" ]
+then
+	say "CARPETA=${CARPETA}"
+else
+	export CARPETA=${INSTALACION}/`SeguridadVER.sh carpeta`;say "CARPETA=${CARPETA}"
+fi
+
+if [ "${ALFA}" ]
+then
+	say "ALFA=${ALFA}"
+else
+	export ALFA=${VIEJOS}/ALFA;say "ALFA=${ALFA}"
+fi
+
+export dd_dir=${ALFA}/FILES;say "dd_dir=${dd_dir}"
+export dd_mnu=${ALFA}/MENU;say "dd_mnu=${dd_mnu}"
+export dd_trz=${ALFA}/TRAZA;say "dd_trz=${dd_trz}"
+export dd_tmp=${ALFA}/tmp;say "dd_tmp=${dd_tmp}"
+export dd_rom=${ALFA}/rom;say "dd_rom=${dd_rom}"
+export dd_obj=${ALFA}/obj;say "dd_obj=${dd_obj}"
+
+export COBPATH="";
+export COBIDY="";
+export algo=${CARPETA}/exe
+fun
+
+cobrun ${*}||runexe
+

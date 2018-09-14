@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>es.cvjpy.maven</groupId>
+        <artifactId>jarmain</artifactId>
+        <version>1.0</version>
+        <relativePath>/es</relativePath>
+    </parent>
+    
+    <groupId>es.cvjpy.seguridad</groupId>
+    <artifactId>seguridad-basica-srv</artifactId>
+    <packaging>jar</packaging>
+
+    <name>262 - seguridad-basica-srv - Jar main para el servidor de COBOL</name>
+    <description>Servidor de COBOL</description>
+        
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+   
+    <build>    
+        <plugins>          
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>es.cvjpy.SeguridadS</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>seguridad-basica-rec</artifactId>
+            <version>${project.version}</version>
+        </dependency>    
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>seguridad-dao</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>seguridad-gui</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+</project>

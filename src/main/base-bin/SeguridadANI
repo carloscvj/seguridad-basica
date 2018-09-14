@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export COBSW=+A-F
+SeguridadRUN ${*}
