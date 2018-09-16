@@ -1,7 +1,5 @@
 package es.cvjpy;
 
-import javax.swing.UIManager;
-
 /**
  * Hello world!
  *
@@ -49,5 +47,6 @@ public class SeguridadZ {
         SeguridadZ main = new SeguridadZ();
         main.inicio(base, userName);
     }
+
 
 }

@@ -51,7 +51,7 @@ public class ConfiguracionDialog extends javax.swing.JDialog implements GuiPro {
         jCheckBox3 = new javax.swing.JCheckBox();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        versionSeguridadPanel1 = new es.cvjpy.aplicacion.VersionPanel();
+        versionAlfaPanel1 = new es.cvjpy.aplicacion.VersionPanel();
         entornoCobolPanel1 = new es.cvjpy.cobol.EntornoCobolPanel();
 
         setLocationByPlatform(true);
@@ -65,7 +65,7 @@ public class ConfiguracionDialog extends javax.swing.JDialog implements GuiPro {
             }
         });
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("seguridadlit"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("alfalit"); // NOI18N
         jCheckBox3.setText(bundle.getString("Mostrar_configuracion_al_iniciar")); // NOI18N
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${datos.configuracion.mostrarInicial}"), jCheckBox3, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -89,7 +89,7 @@ public class ConfiguracionDialog extends javax.swing.JDialog implements GuiPro {
         });
         jPanel2.add(jButton4);
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${datos.configuracion.versionSeguridad}"), versionSeguridadPanel1, org.jdesktop.beansbinding.BeanProperty.create("datos"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${datos.configuracion.versionAlfa}"), versionAlfaPanel1, org.jdesktop.beansbinding.BeanProperty.create("datos"));
         bindingGroup.addBinding(binding);
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${datos.configuracion.entornoCobol}"), entornoCobolPanel1, org.jdesktop.beansbinding.BeanProperty.create("datos"));
@@ -104,7 +104,7 @@ public class ConfiguracionDialog extends javax.swing.JDialog implements GuiPro {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(entornoCobolPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
-                    .addComponent(versionSeguridadPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(versionAlfaPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -115,7 +115,7 @@ public class ConfiguracionDialog extends javax.swing.JDialog implements GuiPro {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(versionSeguridadPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(versionAlfaPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -147,7 +147,7 @@ public class ConfiguracionDialog extends javax.swing.JDialog implements GuiPro {
     private javax.swing.JButton jButton4;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JPanel jPanel2;
-    private es.cvjpy.aplicacion.VersionPanel versionSeguridadPanel1;
+    private es.cvjpy.aplicacion.VersionPanel versionAlfaPanel1;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
     private final ModeloGuiPro auxiliar = new ModeloGuiPro(this);
