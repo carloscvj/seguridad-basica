@@ -5,13 +5,13 @@
     <parent>
         <groupId>es.cvjpy.maven</groupId>
         <artifactId>compilar</artifactId>
-        <version>1.0</version>
+        <version>1.1</version>
         <relativePath>/es</relativePath>
     </parent>
     
     <groupId>es.cvjpy.seguridad</groupId>
     <artifactId>seguridad-basica-rec</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
     
     <name>261 - seguridad-basica-rec - Recursos para la distribución.</name>

@@ -23,5 +23,5 @@ else
 fi
 say "--------------------------------------------------------------------"
 
-java -jar ${INSTALACION}/seguridad-basica-1.0/seguridad-basica-dkt-1.0-Z.jar ${*}
+java -jar ${INSTALACION}/seguridad-basica-1.1/seguridad-basica-dkt-1.1-Z.jar ${*}
 

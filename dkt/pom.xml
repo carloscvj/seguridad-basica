@@ -11,6 +11,7 @@
     
     <groupId>es.cvjpy.seguridad</groupId>
     <artifactId>seguridad-basica-dkt</artifactId>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>263 - seguridad-basica-dkt - Jar main para la Aplicación de escritorio</name>
@@ -49,7 +50,7 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>seguridad-gui</artifactId>
-            <version>${project.version}</version>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 </project>

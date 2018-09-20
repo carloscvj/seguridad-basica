@@ -11,6 +11,7 @@
     
     <groupId>es.cvjpy.seguridad</groupId>
     <artifactId>seguridad-basica-srv</artifactId>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>262 - seguridad-basica-srv - Jar main para el servidor de COBOL</name>
@@ -49,7 +50,7 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>seguridad-gui</artifactId>
-            <version>${project.version}</version>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 </project>
