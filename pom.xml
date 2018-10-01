@@ -15,6 +15,7 @@
     
     <properties>
         <project.cor>${basedir}</project.cor>
+        <project.dao>${basedir}/../seguridad-dao</project.dao>
         <project.dkt.carpeta>seguridad-basica</project.dkt.carpeta>
         <project.dkt.version>1.1</project.dkt.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
